@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>АЙ ТИ КЮ ДРИЙМС ЕООД | IT & AI Consulting, Process Automation</title>
-<meta name="description" content="АЙ ТИ КЮ ДРИЙМС ЕООД provides IT consulting, AI consultancy, process optimization with AI agents, digital solutions, infrastructure advisory, and business technology services in Bulgaria." />
+<title>ITQ DREAMS SLLC | IT & AI Consulting, Process Automation</title>
+<meta name="description" content="ITQ DREAMS SLLC provides IT consulting, AI consultancy, process optimization with AI agents, digital solutions, infrastructure advisory, and business technology services in Bulgaria." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -90,6 +90,12 @@
     flex-shrink: 0;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
   .nav-links {
     display: flex;
     align-items: center;
@@ -115,6 +121,22 @@
   }
 
   .nav-cta:hover { background: var(--cyan-dark) !important; color: var(--navy-950) !important; }
+
+  .lang-toggle {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: white;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 8px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .lang-toggle:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.32); }
 
   .menu-toggle {
     display: none;
@@ -193,7 +215,7 @@
     margin-bottom: 22px;
   }
 
-  .hero h1 span {
+  .hero h1 .grad {
     background: linear-gradient(90deg, var(--cyan), #8fe3fb);
     -webkit-background-clip: text;
     background-clip: text;
@@ -457,29 +479,6 @@
   .step h3 { font-size: 18px; margin-bottom: 8px; color: var(--navy-800); }
   .step p { font-size: 15px; color: var(--ink-soft-2); }
 
-  /* Testimonial */
-  .testimonial {
-    background: white;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
-    padding: 44px;
-    max-width: 780px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .testimonial-quote {
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--navy-900);
-    line-height: 1.5;
-    margin-bottom: 24px;
-  }
-
-  .testimonial-author { font-size: 14.5px; color: var(--ink-soft-2); }
-  .testimonial-author strong { color: var(--navy-800); }
-
   /* FAQ */
   .faq-item {
     background: white;
@@ -675,19 +674,22 @@
       <nav>
         <a href="#top" class="logo">
           <span class="logo-mark">ITQ</span>
-          АЙ ТИ КЮ ДРИЙМС ЕООД
+          <span data-i18n="company.name">ITQ DREAMS SLLC</span>
         </a>
-        <div class="nav-links" id="navLinks">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#ai-consulting">AI Consulting</a>
-          <a href="#process">Process</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact" class="nav-cta">Get in Touch</a>
+        <div class="nav-right">
+          <div class="nav-links" id="navLinks">
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#services" data-i18n="nav.services">Services</a>
+            <a href="#ai-consulting" data-i18n="nav.ai">AI Consulting</a>
+            <a href="#process" data-i18n="nav.process">Process</a>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
+            <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in Touch</a>
+          </div>
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">BG</button>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
       </nav>
     </div>
   </header>
@@ -695,21 +697,21 @@
   <div id="top" class="hero-section">
     <div class="wrap hero-inner">
       <div class="hero">
-        <div class="eyebrow"><span class="dot"></span> Independent IT & AI Consulting · Bulgaria</div>
-        <h1>Technology and AI Advice That Actually <span>Moves Your Business Forward</span></h1>
-        <p>
+        <div class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Independent IT & AI Consulting · Bulgaria</span></div>
+        <h1><span data-i18n="hero.h1a">Technology and AI Advice That Actually</span> <span class="grad" data-i18n="hero.h1b">Moves Your Business Forward</span></h1>
+        <p data-i18n="hero.p">
           Vendor-neutral IT consulting, AI consultancy, and process optimization with AI
           agents — for businesses that want practical, reliable, future-ready decisions
           without the sales pitch.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn">Request a Consultation →</a>
-          <a href="#ai-consulting" class="btn btn-outline">Explore AI Consulting</a>
+          <a href="#contact" class="btn" data-i18n="hero.btn1">Request a Consultation →</a>
+          <a href="#ai-consulting" class="btn btn-outline" data-i18n="hero.btn2">Explore AI Consulting</a>
         </div>
         <div class="hero-trust">
-          <div><strong>100%</strong><span>Vendor-neutral advice</span></div>
-          <div><strong>AI-Ready</strong><span>Process & agent design</span></div>
-          <div><strong>Bulgaria</strong><span>Based, EU-wide reach</span></div>
+          <div><strong data-i18n="hero.trust1.value">100%</strong><span data-i18n="hero.trust1.label">Vendor-neutral advice</span></div>
+          <div><strong data-i18n="hero.trust2.value">AI-Ready</strong><span data-i18n="hero.trust2.label">Process & agent design</span></div>
+          <div><strong data-i18n="hero.trust3.value">Bulgaria</strong><span data-i18n="hero.trust3.label">Based, EU-wide reach</span></div>
         </div>
       </div>
 
@@ -718,19 +720,19 @@
           <div class="hero-visual-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="#071827" stroke-width="1.8" stroke-linejoin="round"/></svg>
           </div>
-          <div class="hero-visual-text"><strong>IT Strategy Review</strong><span>Clarify priorities in one session</span></div>
+          <div class="hero-visual-text"><strong data-i18n="hero.visual1.title">IT Strategy Review</strong><span data-i18n="hero.visual1.desc">Clarify priorities in one session</span></div>
         </div>
         <div class="hero-visual-row">
           <div class="hero-visual-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#071827" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
-          <div class="hero-visual-text"><strong>Infrastructure Advisory</strong><span>Plan environments that scale</span></div>
+          <div class="hero-visual-text"><strong data-i18n="hero.visual2.title">Infrastructure Advisory</strong><span data-i18n="hero.visual2.desc">Plan environments that scale</span></div>
         </div>
         <div class="hero-visual-row">
           <div class="hero-visual-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="6" y="8" width="12" height="10" rx="2" stroke="#071827" stroke-width="1.8"/><circle cx="9.5" cy="13" r="1" fill="#071827"/><circle cx="14.5" cy="13" r="1" fill="#071827"/><path d="M12 8V5" stroke="#071827" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
-          <div class="hero-visual-text"><strong>AI Agents & Automation</strong><span>Offload repetitive work to AI</span></div>
+          <div class="hero-visual-text"><strong data-i18n="hero.visual3.title">AI Agents & Automation</strong><span data-i18n="hero.visual3.desc">Offload repetitive work to AI</span></div>
         </div>
       </div>
     </div>
@@ -739,30 +741,30 @@
   <section id="about">
     <div class="wrap about-grid">
       <div class="about-text">
-        <div class="kicker">About Us</div>
-        <h2 class="section-title">Practical IT guidance, without vendor bias</h2>
-        <p class="section-text">
-          АЙ ТИ КЮ ДРИЙМС ЕООД is a Bulgarian technology consulting company providing
+        <div class="kicker" data-i18n="about.kicker">About Us</div>
+        <h2 class="section-title" data-i18n="about.h2">Practical IT guidance, without vendor bias</h2>
+        <p class="section-text" data-i18n="about.p1">
+          ITQ DREAMS SLLC is a Bulgarian technology consulting company providing
           professional services in information technology, consulting, online consulting,
           and related business technology activities.
         </p>
-        <p class="section-text">
+        <p class="section-text" data-i18n="about.p2">
           We help organizations improve how they use technology by offering clear advice,
           practical solutions, and business-focused guidance. Our approach is independent,
           flexible, and tailored to each client's needs — not to any vendor's roadmap.
         </p>
         <ul class="check-list">
-          <li><span class="check-icon">✓</span> Independent recommendations, no reseller incentives</li>
-          <li><span class="check-icon">✓</span> Engagements scoped to your budget and timeline</li>
-          <li><span class="check-icon">✓</span> Available remotely across time zones, or on-site in Bulgaria</li>
+          <li><span class="check-icon">✓</span> <span data-i18n="about.li1">Independent recommendations, no reseller incentives</span></li>
+          <li><span class="check-icon">✓</span> <span data-i18n="about.li2">Engagements scoped to your budget and timeline</span></li>
+          <li><span class="check-icon">✓</span> <span data-i18n="about.li3">Available remotely across time zones, or on-site in Bulgaria</span></li>
         </ul>
       </div>
 
       <div class="about-side">
-        <h4>Why It Matters</h4>
-        <div class="stat-row"><strong>0%</strong><span>Commission from vendors or platforms</span></div>
-        <div class="stat-row"><strong>1:1</strong><span>Direct access to your consultant, not a call center</span></div>
-        <div class="stat-row"><strong>&lt;48h</strong><span>Typical response time on new inquiries</span></div>
+        <h4 data-i18n="about.side.h4">Why It Matters</h4>
+        <div class="stat-row"><strong data-i18n="about.stat1.value">0%</strong><span data-i18n="about.stat1.label">Commission from vendors or platforms</span></div>
+        <div class="stat-row"><strong data-i18n="about.stat2.value">1:1</strong><span data-i18n="about.stat2.label">Direct access to your consultant, not a call center</span></div>
+        <div class="stat-row"><strong data-i18n="about.stat3.value">&lt;48h</strong><span data-i18n="about.stat3.label">Typical response time on new inquiries</span></div>
       </div>
     </div>
   </section>
@@ -770,9 +772,9 @@
   <section id="services" class="highlight">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">Our Services</div>
-        <h2 class="section-title">General IT services, applied where they matter</h2>
-        <p class="section-text">
+        <div class="kicker" data-i18n="services.kicker">Our Services</div>
+        <h2 class="section-title" data-i18n="services.h2">General IT services, applied where they matter</h2>
+        <p class="section-text" data-i18n="services.p">
           We focus on consulting, planning, improvement, and digital enablement —
           so you spend less time guessing and more time executing.
         </p>
@@ -781,33 +783,33 @@
       <div class="cards">
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 18l-5-6 5-6M15 6l5 6-5 6" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>IT Consulting</h3>
-          <p>Professional advice to help businesses make better technology decisions.</p>
+          <h3 data-i18n="services.card1.title">IT Consulting</h3>
+          <p data-i18n="services.card1.desc">Professional advice to help businesses make better technology decisions.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#22c7f2" stroke-width="1.8"/><path d="M8 12h8M12 8v8" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h3>Online Consulting</h3>
-          <p>Remote consultations, technical guidance, planning sessions, and advisory support.</p>
+          <h3 data-i18n="services.card2.title">Online Consulting</h3>
+          <p data-i18n="services.card2.desc">Remote consultations, technical guidance, planning sessions, and advisory support.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 17l6-6-4-4M12 19h8" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Digital Solutions</h3>
-          <p>Support for improving business processes through practical technology solutions.</p>
+          <h3 data-i18n="services.card3.title">Digital Solutions</h3>
+          <p data-i18n="services.card3.desc">Support for improving business processes through practical technology solutions.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="#22c7f2" stroke-width="1.8"/><rect x="13" y="4" width="7" height="7" rx="1.5" stroke="#22c7f2" stroke-width="1.8"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="#22c7f2" stroke-width="1.8"/><rect x="13" y="13" width="7" height="7" rx="1.5" stroke="#22c7f2" stroke-width="1.8"/></svg></div>
-          <h3>Infrastructure Advisory</h3>
-          <p>Guidance for planning, improving, and organizing reliable IT environments.</p>
+          <h3 data-i18n="services.card4.title">Infrastructure Advisory</h3>
+          <p data-i18n="services.card4.desc">Guidance for planning, improving, and organizing reliable IT environments.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l3 8 4-16 3 8h4" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Business Technology Advisory</h3>
-          <p>Independent recommendations for tools, systems, platforms, and IT strategy.</p>
+          <h3 data-i18n="services.card5.title">Business Technology Advisory</h3>
+          <p data-i18n="services.card5.desc">Independent recommendations for tools, systems, platforms, and IT strategy.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h3>Custom IT Services</h3>
-          <p>Flexible technology services adapted to the operational needs of each client.</p>
+          <h3 data-i18n="services.card6.title">Custom IT Services</h3>
+          <p data-i18n="services.card6.desc">Flexible technology services adapted to the operational needs of each client.</p>
         </div>
       </div>
     </div>
@@ -816,9 +818,9 @@
   <section id="ai-consulting" class="ai-section">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">AI Consultancy <span class="badge-new">Featured</span></div>
-        <h2 class="section-title">Put AI agents to work in your operations</h2>
-        <p class="section-text">
+        <div class="kicker"><span data-i18n="ai.kicker">AI Consultancy</span> <span class="badge-new" data-i18n="ai.badge">Featured</span></div>
+        <h2 class="section-title" data-i18n="ai.h2">Put AI agents to work in your operations</h2>
+        <p class="section-text" data-i18n="ai.p">
           Beyond general IT advice, we identify where AI can remove repetitive manual work,
           speed up decisions, and free your team for higher-value tasks — with a clear,
           honest plan for where it fits and where it doesn't.
@@ -828,33 +830,33 @@
       <div class="cards">
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4.5 9a8 8 0 0113-3M4 4v5h5" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 15a8 8 0 01-13 3M20 20v-5h-5" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>AI Process Optimization</h3>
-          <p>We map your current workflows and pinpoint repetitive, manual steps that AI can take over or accelerate.</p>
+          <h3 data-i18n="ai.card1.title">AI Process Optimization</h3>
+          <p data-i18n="ai.card1.desc">We map your current workflows and pinpoint repetitive, manual steps that AI can take over or accelerate.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="6" y="8" width="12" height="10" rx="2" stroke="#22c7f2" stroke-width="1.8"/><circle cx="9.5" cy="13" r="1" fill="#22c7f2"/><circle cx="14.5" cy="13" r="1" fill="#22c7f2"/><path d="M12 8V5M9 5h6" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h3>Custom AI Agents</h3>
-          <p>We design and deploy AI agents for specific tasks — support, data entry, reporting, monitoring — tailored to your systems.</p>
+          <h3 data-i18n="ai.card2.title">Custom AI Agents</h3>
+          <p data-i18n="ai.card2.desc">We design and deploy AI agents for specific tasks — support, data entry, reporting, monitoring — tailored to your systems.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="6" r="2" stroke="#22c7f2" stroke-width="1.8"/><circle cx="19" cy="6" r="2" stroke="#22c7f2" stroke-width="1.8"/><circle cx="12" cy="18" r="2" stroke="#22c7f2" stroke-width="1.8"/><path d="M5 8v3a2 2 0 002 2h3M19 8v3a2 2 0 01-2 2h-3M12 16v-3" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h3>Workflow Automation</h3>
-          <p>We connect AI agents to your existing tools and systems for end-to-end automation, not another disconnected app.</p>
+          <h3 data-i18n="ai.card3.title">Workflow Automation</h3>
+          <p data-i18n="ai.card3.desc">We connect AI agents to your existing tools and systems for end-to-end automation, not another disconnected app.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="2" stroke="#22c7f2" stroke-width="1.8"/><path d="M9 9h6M9 13h6M9 17h3" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h3>AI Readiness Assessment</h3>
-          <p>We evaluate your current processes, data, and tooling to identify where AI delivers real, measurable ROI.</p>
+          <h3 data-i18n="ai.card4.title">AI Readiness Assessment</h3>
+          <p data-i18n="ai.card4.desc">We evaluate your current processes, data, and tooling to identify where AI delivers real, measurable ROI.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="7" ry="3" stroke="#22c7f2" stroke-width="1.8"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h3>Data & Integration</h3>
-          <p>We prepare and connect your data sources so AI agents have reliable, accurate inputs to work from.</p>
+          <h3 data-i18n="ai.card5.title">Data & Integration</h3>
+          <p data-i18n="ai.card5.desc">We prepare and connect your data sources so AI agents have reliable, accurate inputs to work from.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8l10 5 10-5-10-5z" stroke="#22c7f2" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 10v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Adoption & Training</h3>
-          <p>We help your team understand, trust, and effectively use AI tools day-to-day, not just deploy and disappear.</p>
+          <h3 data-i18n="ai.card6.title">Adoption & Training</h3>
+          <p data-i18n="ai.card6.desc">We help your team understand, trust, and effectively use AI tools day-to-day, not just deploy and disappear.</p>
         </div>
       </div>
     </div>
@@ -863,30 +865,30 @@
   <section id="process">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">How We Work</div>
-        <h2 class="section-title">A simple, transparent process</h2>
-        <p class="section-text">No lengthy onboarding, no lock-in — just a clear path from question to decision.</p>
+        <div class="kicker" data-i18n="process.kicker">How We Work</div>
+        <h2 class="section-title" data-i18n="process.h2">A simple, transparent process</h2>
+        <p class="section-text" data-i18n="process.p">No lengthy onboarding, no lock-in — just a clear path from question to decision.</p>
       </div>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <h3>Discovery Call</h3>
-          <p>We listen to your current setup, goals, and constraints — remotely or on-site.</p>
+          <h3 data-i18n="process.step1.title">Discovery Call</h3>
+          <p data-i18n="process.step1.desc">We listen to your current setup, goals, and constraints — remotely or on-site.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <h3>Assessment</h3>
-          <p>We review your options honestly, including the choice to change nothing.</p>
+          <h3 data-i18n="process.step2.title">Assessment</h3>
+          <p data-i18n="process.step2.desc">We review your options honestly, including the choice to change nothing.</p>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <h3>Recommendation</h3>
-          <p>You get a clear, written plan with trade-offs — not a sales proposal.</p>
+          <h3 data-i18n="process.step3.title">Recommendation</h3>
+          <p data-i18n="process.step3.desc">You get a clear, written plan with trade-offs — not a sales proposal.</p>
         </div>
         <div class="step">
           <div class="step-num">4</div>
-          <h3>Support</h3>
-          <p>We stay available as you implement, adjusting guidance as things evolve.</p>
+          <h3 data-i18n="process.step4.title">Support</h3>
+          <p data-i18n="process.step4.desc">We stay available as you implement, adjusting guidance as things evolve.</p>
         </div>
       </div>
     </div>
@@ -895,24 +897,24 @@
   <section class="highlight">
     <div class="wrap">
       <div class="section-head" style="margin-bottom:36px;">
-        <div class="kicker">Why Choose Us</div>
-        <h2 class="section-title">Advice you can actually act on</h2>
+        <div class="kicker" data-i18n="why.kicker">Why Choose Us</div>
+        <h2 class="section-title" data-i18n="why.h2">Advice you can actually act on</h2>
       </div>
       <div class="cards">
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6L12 3z" stroke="#22c7f2" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-          <h3>Independent Advice</h3>
-          <p>Vendor-neutral consulting focused on what best fits your business.</p>
+          <h3 data-i18n="why.card1.title">Independent Advice</h3>
+          <p data-i18n="why.card1.desc">Vendor-neutral consulting focused on what best fits your business.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#22c7f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Practical Approach</h3>
-          <p>Clear, realistic solutions designed for real business environments.</p>
+          <h3 data-i18n="why.card2.title">Practical Approach</h3>
+          <p data-i18n="why.card2.desc">Clear, realistic solutions designed for real business environments.</p>
         </div>
         <div class="card">
           <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0116 0M4 12a8 8 0 008 8M4 12a8 8 0 018-8" stroke="#22c7f2" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h3>Flexible Support</h3>
-          <p>Consulting and advisory services available remotely or on-site when needed.</p>
+          <h3 data-i18n="why.card3.title">Flexible Support</h3>
+          <p data-i18n="why.card3.desc">Consulting and advisory services available remotely or on-site when needed.</p>
         </div>
       </div>
     </div>
@@ -921,29 +923,29 @@
   <section id="faq">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">FAQ</div>
-        <h2 class="section-title">Common questions</h2>
+        <div class="kicker" data-i18n="faq.kicker">FAQ</div>
+        <h2 class="section-title" data-i18n="faq.h2">Common questions</h2>
       </div>
       <div style="max-width:760px;">
         <div class="faq-item">
-          <button class="faq-question">Do you work with companies outside Bulgaria? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>Yes. Most consulting and advisory work is delivered remotely, so we work with clients across the EU and beyond. On-site visits can be arranged within Bulgaria.</p></div>
+          <button class="faq-question"><span data-i18n="faq.q1">Do you work with companies outside Bulgaria?</span> <span class="plus">+</span></button>
+          <div class="faq-answer"><p data-i18n="faq.a1">Yes. Most consulting and advisory work is delivered remotely, so we work with clients across the EU and beyond. On-site visits can be arranged within Bulgaria.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Are you tied to any specific software vendor? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>No. Our recommendations are independent and vendor-neutral — we're not paid commissions by any platform or reseller, so advice is based on what fits your business.</p></div>
+          <button class="faq-question"><span data-i18n="faq.q2">Are you tied to any specific software vendor?</span> <span class="plus">+</span></button>
+          <div class="faq-answer"><p data-i18n="faq.a2">No. Our recommendations are independent and vendor-neutral — we're not paid commissions by any platform or reseller, so advice is based on what fits your business.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">How does a first consultation work? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>You reach out via the contact form or email, we schedule a short discovery call, and you receive a clear written summary of options and next steps afterward.</p></div>
+          <button class="faq-question"><span data-i18n="faq.q3">How does a first consultation work?</span> <span class="plus">+</span></button>
+          <div class="faq-answer"><p data-i18n="faq.a3">You reach out via the contact form or email, we schedule a short discovery call, and you receive a clear written summary of options and next steps afterward.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">What size of business do you typically work with? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>We work with small and mid-sized businesses that need practical guidance without the overhead of a large consulting firm.</p></div>
+          <button class="faq-question"><span data-i18n="faq.q4">What size of business do you typically work with?</span> <span class="plus">+</span></button>
+          <div class="faq-answer"><p data-i18n="faq.a4">We work with small and mid-sized businesses that need practical guidance without the overhead of a large consulting firm.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Do you help implement AI agents, or just advise? <span class="plus">+</span></button>
-          <div class="faq-answer"><p>Both. We start with an honest assessment of where AI fits your processes, then can design, build, and connect the AI agents themselves — and stay involved through adoption and training.</p></div>
+          <button class="faq-question"><span data-i18n="faq.q5">Do you help implement AI agents, or just advise?</span> <span class="plus">+</span></button>
+          <div class="faq-answer"><p data-i18n="faq.a5">Both. We start with an honest assessment of where AI fits your processes, then can design, build, and connect the AI agents themselves — and stay involved through adoption and training.</p></div>
         </div>
       </div>
     </div>
@@ -952,47 +954,47 @@
   <section id="contact" class="highlight">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">Contact</div>
-        <h2 class="section-title">Let's talk about your technology</h2>
-        <p class="section-text">Send a message or email us directly — we typically respond within 48 hours.</p>
+        <div class="kicker" data-i18n="contact.kicker">Contact</div>
+        <h2 class="section-title" data-i18n="contact.h2">Let's talk about your technology</h2>
+        <p class="section-text" data-i18n="contact.p">Send a message or email us directly — we typically respond within 48 hours.</p>
       </div>
 
       <div class="contact-grid">
         <div class="contact-box">
-          <h3>Send a Message</h3>
+          <h3 data-i18n="contact.form.h3">Send a Message</h3>
           <form action="mailto:itqdreamers@gmail.com" method="post" enctype="text/plain">
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
+              <label for="name" data-i18n="contact.form.labelName">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="contact.form.placeholderName" required />
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+              <label for="email" data-i18n="contact.form.labelEmail">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" data-i18n-placeholder="contact.form.placeholderEmail" required />
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us briefly what you need help with..." required></textarea>
+              <label for="message" data-i18n="contact.form.labelMessage">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us briefly what you need help with..." data-i18n-placeholder="contact.form.placeholderMessage" required></textarea>
             </div>
-            <button type="submit" class="btn" style="width:100%; justify-content:center;">Send Message</button>
-            <p class="form-note">This opens your email client to send the message to itqdreamers@gmail.com.</p>
+            <button type="submit" class="btn" style="width:100%; justify-content:center;" data-i18n="contact.form.submit">Send Message</button>
+            <p class="form-note" data-i18n="contact.form.note">This opens your email client to send the message to itqdreamers@gmail.com.</p>
           </form>
         </div>
 
         <div class="contact-box">
-          <h3>Company Details</h3>
+          <h3 data-i18n="contact.details.h3">Company Details</h3>
           <div class="contact-row">
             <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 7l9 6 9-6M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="#22c7f2" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-            <div><strong>Company</strong><br>АЙ ТИ КЮ ДРИЙМС ЕООД</div>
+            <div><strong data-i18n="contact.details.companyLabel">Company</strong><br><span data-i18n="company.name">ITQ DREAMS SLLC</span></div>
           </div>
           <div class="contact-row">
             <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.3 7-12a7 7 0 10-14 0c0 5.7 7 12 7 12z" stroke="#22c7f2" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5" stroke="#22c7f2" stroke-width="1.6"/></svg></div>
-            <div><strong>Location</strong><br>Bulgaria</div>
+            <div><strong data-i18n="contact.details.locationLabel">Location</strong><br><span data-i18n="contact.details.locationValue">Bulgaria</span></div>
           </div>
           <div class="contact-row">
             <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#22c7f2" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="#22c7f2" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-            <div><strong>Email</strong><br><a href="mailto:itqdreamers@gmail.com">itqdreamers@gmail.com</a></div>
+            <div><strong data-i18n="contact.details.emailLabel">Email</strong><br><a href="mailto:itqdreamers@gmail.com">itqdreamers@gmail.com</a></div>
           </div>
-          <a href="mailto:itqdreamers@gmail.com" class="btn" style="margin-top:22px; width:100%; justify-content:center;">Email Us Directly</a>
+          <a href="mailto:itqdreamers@gmail.com" class="btn" style="margin-top:22px; width:100%; justify-content:center;" data-i18n="contact.details.button">Email Us Directly</a>
         </div>
       </div>
     </div>
@@ -1002,27 +1004,27 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="#top" class="logo"><span class="logo-mark">ITQ</span> АЙ ТИ КЮ ДРИЙМС ЕООД</a>
-          <p>Independent IT and AI consulting, process automation, and digital technology services for businesses in Bulgaria and beyond.</p>
+          <a href="#top" class="logo"><span class="logo-mark">ITQ</span> <span data-i18n="company.name">ITQ DREAMS SLLC</span></a>
+          <p data-i18n="footer.brand">Independent IT and AI consulting, process automation, and digital technology services for businesses in Bulgaria and beyond.</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
-            <h5>Company</h5>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#ai-consulting">AI Consulting</a>
-            <a href="#faq">FAQ</a>
+            <h5 data-i18n="footer.companyHeading">Company</h5>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#services" data-i18n="nav.services">Services</a>
+            <a href="#ai-consulting" data-i18n="nav.ai">AI Consulting</a>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
           </div>
           <div class="footer-col">
-            <h5>Get in Touch</h5>
+            <h5 data-i18n="footer.getInTouchHeading">Get in Touch</h5>
             <a href="mailto:itqdreamers@gmail.com">itqdreamers@gmail.com</a>
-            <a href="#contact">Contact form</a>
+            <a href="#contact" data-i18n="footer.contactForm">Contact form</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 АЙ ТИ КЮ ДРИЙМС ЕООД. All rights reserved.</span>
-        <span>IT Consulting · AI Consultancy · Process Automation</span>
+        <span>© 2026 <span data-i18n="company.name">ITQ DREAMS SLLC</span>. <span data-i18n="footer.rights">All rights reserved.</span></span>
+        <span data-i18n="footer.tagline2">IT Consulting · AI Consultancy · Process Automation</span>
       </div>
     </div>
   </footer>
@@ -1052,6 +1054,296 @@
         }
       });
     });
+
+    const translations = {
+      en: {
+        'meta.title': 'ITQ DREAMS SLLC | IT & AI Consulting, Process Automation',
+        'meta.description': 'ITQ DREAMS SLLC provides IT consulting, AI consultancy, process optimization with AI agents, digital solutions, infrastructure advisory, and business technology services in Bulgaria.',
+        'company.name': 'ITQ DREAMS SLLC',
+        'nav.about': 'About',
+        'nav.services': 'Services',
+        'nav.ai': 'AI Consulting',
+        'nav.process': 'Process',
+        'nav.faq': 'FAQ',
+        'nav.cta': 'Get in Touch',
+        'hero.eyebrow': 'Independent IT & AI Consulting · Bulgaria',
+        'hero.h1a': 'Technology and AI Advice That Actually',
+        'hero.h1b': 'Moves Your Business Forward',
+        'hero.p': 'Vendor-neutral IT consulting, AI consultancy, and process optimization with AI agents — for businesses that want practical, reliable, future-ready decisions without the sales pitch.',
+        'hero.btn1': 'Request a Consultation →',
+        'hero.btn2': 'Explore AI Consulting',
+        'hero.trust1.value': '100%',
+        'hero.trust1.label': 'Vendor-neutral advice',
+        'hero.trust2.value': 'AI-Ready',
+        'hero.trust2.label': 'Process & agent design',
+        'hero.trust3.value': 'Bulgaria',
+        'hero.trust3.label': 'Based, EU-wide reach',
+        'hero.visual1.title': 'IT Strategy Review',
+        'hero.visual1.desc': 'Clarify priorities in one session',
+        'hero.visual2.title': 'Infrastructure Advisory',
+        'hero.visual2.desc': 'Plan environments that scale',
+        'hero.visual3.title': 'AI Agents & Automation',
+        'hero.visual3.desc': 'Offload repetitive work to AI',
+        'about.kicker': 'About Us',
+        'about.h2': 'Practical IT guidance, without vendor bias',
+        'about.p1': 'ITQ DREAMS SLLC is a Bulgarian technology consulting company providing professional services in information technology, consulting, online consulting, and related business technology activities.',
+        'about.p2': "We help organizations improve how they use technology by offering clear advice, practical solutions, and business-focused guidance. Our approach is independent, flexible, and tailored to each client's needs — not to any vendor's roadmap.",
+        'about.li1': 'Independent recommendations, no reseller incentives',
+        'about.li2': 'Engagements scoped to your budget and timeline',
+        'about.li3': 'Available remotely across time zones, or on-site in Bulgaria',
+        'about.side.h4': 'Why It Matters',
+        'about.stat1.value': '0%',
+        'about.stat1.label': 'Commission from vendors or platforms',
+        'about.stat2.value': '1:1',
+        'about.stat2.label': 'Direct access to your consultant, not a call center',
+        'about.stat3.value': '<48h',
+        'about.stat3.label': 'Typical response time on new inquiries',
+        'services.kicker': 'Our Services',
+        'services.h2': 'General IT services, applied where they matter',
+        'services.p': 'We focus on consulting, planning, improvement, and digital enablement — so you spend less time guessing and more time executing.',
+        'services.card1.title': 'IT Consulting',
+        'services.card1.desc': 'Professional advice to help businesses make better technology decisions.',
+        'services.card2.title': 'Online Consulting',
+        'services.card2.desc': 'Remote consultations, technical guidance, planning sessions, and advisory support.',
+        'services.card3.title': 'Digital Solutions',
+        'services.card3.desc': 'Support for improving business processes through practical technology solutions.',
+        'services.card4.title': 'Infrastructure Advisory',
+        'services.card4.desc': 'Guidance for planning, improving, and organizing reliable IT environments.',
+        'services.card5.title': 'Business Technology Advisory',
+        'services.card5.desc': 'Independent recommendations for tools, systems, platforms, and IT strategy.',
+        'services.card6.title': 'Custom IT Services',
+        'services.card6.desc': 'Flexible technology services adapted to the operational needs of each client.',
+        'ai.kicker': 'AI Consultancy',
+        'ai.badge': 'Featured',
+        'ai.h2': 'Put AI agents to work in your operations',
+        'ai.p': "Beyond general IT advice, we identify where AI can remove repetitive manual work, speed up decisions, and free your team for higher-value tasks — with a clear, honest plan for where it fits and where it doesn't.",
+        'ai.card1.title': 'AI Process Optimization',
+        'ai.card1.desc': 'We map your current workflows and pinpoint repetitive, manual steps that AI can take over or accelerate.',
+        'ai.card2.title': 'Custom AI Agents',
+        'ai.card2.desc': 'We design and deploy AI agents for specific tasks — support, data entry, reporting, monitoring — tailored to your systems.',
+        'ai.card3.title': 'Workflow Automation',
+        'ai.card3.desc': 'We connect AI agents to your existing tools and systems for end-to-end automation, not another disconnected app.',
+        'ai.card4.title': 'AI Readiness Assessment',
+        'ai.card4.desc': 'We evaluate your current processes, data, and tooling to identify where AI delivers real, measurable ROI.',
+        'ai.card5.title': 'Data & Integration',
+        'ai.card5.desc': 'We prepare and connect your data sources so AI agents have reliable, accurate inputs to work from.',
+        'ai.card6.title': 'Adoption & Training',
+        'ai.card6.desc': 'We help your team understand, trust, and effectively use AI tools day-to-day, not just deploy and disappear.',
+        'process.kicker': 'How We Work',
+        'process.h2': 'A simple, transparent process',
+        'process.p': 'No lengthy onboarding, no lock-in — just a clear path from question to decision.',
+        'process.step1.title': 'Discovery Call',
+        'process.step1.desc': 'We listen to your current setup, goals, and constraints — remotely or on-site.',
+        'process.step2.title': 'Assessment',
+        'process.step2.desc': 'We review your options honestly, including the choice to change nothing.',
+        'process.step3.title': 'Recommendation',
+        'process.step3.desc': 'You get a clear, written plan with trade-offs — not a sales proposal.',
+        'process.step4.title': 'Support',
+        'process.step4.desc': 'We stay available as you implement, adjusting guidance as things evolve.',
+        'why.kicker': 'Why Choose Us',
+        'why.h2': 'Advice you can actually act on',
+        'why.card1.title': 'Independent Advice',
+        'why.card1.desc': 'Vendor-neutral consulting focused on what best fits your business.',
+        'why.card2.title': 'Practical Approach',
+        'why.card2.desc': 'Clear, realistic solutions designed for real business environments.',
+        'why.card3.title': 'Flexible Support',
+        'why.card3.desc': 'Consulting and advisory services available remotely or on-site when needed.',
+        'faq.kicker': 'FAQ',
+        'faq.h2': 'Common questions',
+        'faq.q1': 'Do you work with companies outside Bulgaria?',
+        'faq.a1': 'Yes. Most consulting and advisory work is delivered remotely, so we work with clients across the EU and beyond. On-site visits can be arranged within Bulgaria.',
+        'faq.q2': 'Are you tied to any specific software vendor?',
+        'faq.a2': "No. Our recommendations are independent and vendor-neutral — we're not paid commissions by any platform or reseller, so advice is based on what fits your business.",
+        'faq.q3': 'How does a first consultation work?',
+        'faq.a3': 'You reach out via the contact form or email, we schedule a short discovery call, and you receive a clear written summary of options and next steps afterward.',
+        'faq.q4': 'What size of business do you typically work with?',
+        'faq.a4': 'We work with small and mid-sized businesses that need practical guidance without the overhead of a large consulting firm.',
+        'faq.q5': 'Do you help implement AI agents, or just advise?',
+        'faq.a5': 'Both. We start with an honest assessment of where AI fits your processes, then can design, build, and connect the AI agents themselves — and stay involved through adoption and training.',
+        'contact.kicker': 'Contact',
+        'contact.h2': "Let's talk about your technology",
+        'contact.p': 'Send a message or email us directly — we typically respond within 48 hours.',
+        'contact.form.h3': 'Send a Message',
+        'contact.form.labelName': 'Name',
+        'contact.form.labelEmail': 'Email',
+        'contact.form.labelMessage': 'Message',
+        'contact.form.placeholderName': 'Your name',
+        'contact.form.placeholderEmail': 'you@company.com',
+        'contact.form.placeholderMessage': 'Tell us briefly what you need help with...',
+        'contact.form.submit': 'Send Message',
+        'contact.form.note': 'This opens your email client to send the message to itqdreamers@gmail.com.',
+        'contact.details.h3': 'Company Details',
+        'contact.details.companyLabel': 'Company',
+        'contact.details.locationLabel': 'Location',
+        'contact.details.locationValue': 'Bulgaria',
+        'contact.details.emailLabel': 'Email',
+        'contact.details.button': 'Email Us Directly',
+        'footer.brand': 'Independent IT and AI consulting, process automation, and digital technology services for businesses in Bulgaria and beyond.',
+        'footer.companyHeading': 'Company',
+        'footer.getInTouchHeading': 'Get in Touch',
+        'footer.contactForm': 'Contact form',
+        'footer.rights': 'All rights reserved.',
+        'footer.tagline2': 'IT Consulting · AI Consultancy · Process Automation',
+      },
+      bg: {
+        'meta.title': 'АЙ ТИ КЮ ДРИЙМС ЕООД | ИТ и AI консултации, автоматизация на процеси',
+        'meta.description': 'АЙ ТИ КЮ ДРИЙМС ЕООД предлага ИТ консултиране, AI консултации, оптимизация на процеси с AI агенти, дигитални решения, консултации по инфраструктура и бизнес технологични услуги в България.',
+        'company.name': 'АЙ ТИ КЮ ДРИЙМС ЕООД',
+        'nav.about': 'За нас',
+        'nav.services': 'Услуги',
+        'nav.ai': 'AI консултации',
+        'nav.process': 'Процес',
+        'nav.faq': 'Въпроси',
+        'nav.cta': 'Свържете се',
+        'hero.eyebrow': 'Независим ИТ и AI консултант · България',
+        'hero.h1a': 'Технологични и AI решения, които наистина',
+        'hero.h1b': 'развиват бизнеса ви напред',
+        'hero.p': 'Независимо от доставчици ИТ консултиране, AI консултации и оптимизация на процеси с AI агенти — за бизнеси, които искат практични, надеждни и готови за бъдещето решения без агресивни продажби.',
+        'hero.btn1': 'Заявете консултация →',
+        'hero.btn2': 'Разгледайте AI консултациите',
+        'hero.trust1.value': '100%',
+        'hero.trust1.label': 'Независими препоръки',
+        'hero.trust2.value': 'AI-готовност',
+        'hero.trust2.label': 'Проектиране на процеси и агенти',
+        'hero.trust3.value': 'България',
+        'hero.trust3.label': 'Базирани тук, обхват в ЕС',
+        'hero.visual1.title': 'Преглед на ИТ стратегия',
+        'hero.visual1.desc': 'Изясняване на приоритетите в една сесия',
+        'hero.visual2.title': 'Консултации по инфраструктура',
+        'hero.visual2.desc': 'Планиране на среди, които растат с вас',
+        'hero.visual3.title': 'AI агенти и автоматизация',
+        'hero.visual3.desc': 'Прехвърлете повтарящи се задачи на AI',
+        'about.kicker': 'За нас',
+        'about.h2': 'Практични ИТ съвети, без пристрастие към доставчици',
+        'about.p1': 'АЙ ТИ КЮ ДРИЙМС ЕООД е българска технологична консултантска компания, предоставяща професионални услуги в областта на информационните технологии, консултиране, онлайн консултиране и свързани бизнес технологични дейности.',
+        'about.p2': 'Помагаме на организациите да подобрят начина, по който използват технологиите, като предлагаме ясни съвети, практични решения и насоки, фокусирани върху бизнеса. Подходът ни е независим, гъвкав и съобразен с нуждите на всеки клиент — а не с плана на даден доставчик.',
+        'about.li1': 'Независими препоръки, без комисионни от доставчици',
+        'about.li2': 'Обхват на работата, съобразен с бюджета и сроковете ви',
+        'about.li3': 'На разположение дистанционно в различни часови зони или на място в България',
+        'about.side.h4': 'Защо е важно',
+        'about.stat1.value': '0%',
+        'about.stat1.label': 'Комисионна от доставчици или платформи',
+        'about.stat2.value': '1:1',
+        'about.stat2.label': 'Директен достъп до вашия консултант, не кол център',
+        'about.stat3.value': '<48ч',
+        'about.stat3.label': 'Обичайно време за отговор на нови запитвания',
+        'services.kicker': 'Нашите услуги',
+        'services.h2': 'Общи ИТ услуги, приложени там, където имат значение',
+        'services.p': 'Фокусираме се върху консултиране, планиране, подобрения и дигитализация — за да отделяте по-малко време за догадки и повече за действие.',
+        'services.card1.title': 'ИТ консултиране',
+        'services.card1.desc': 'Професионални съвети, които помагат на бизнеса да взема по-добри технологични решения.',
+        'services.card2.title': 'Онлайн консултиране',
+        'services.card2.desc': 'Дистанционни консултации, техническо ръководство, сесии за планиране и съвети.',
+        'services.card3.title': 'Дигитални решения',
+        'services.card3.desc': 'Подкрепа за подобряване на бизнес процесите чрез практични технологични решения.',
+        'services.card4.title': 'Консултации по инфраструктура',
+        'services.card4.desc': 'Насоки за планиране, подобряване и организиране на надеждна ИТ среда.',
+        'services.card5.title': 'Консултации по бизнес технологии',
+        'services.card5.desc': 'Независими препоръки за инструменти, системи, платформи и ИТ стратегия.',
+        'services.card6.title': 'Персонализирани ИТ услуги',
+        'services.card6.desc': 'Гъвкави технологични услуги, съобразени с оперативните нужди на всеки клиент.',
+        'ai.kicker': 'AI консултации',
+        'ai.badge': 'Препоръчано',
+        'ai.h2': 'Впрегнете AI агенти в работата на бизнеса ви',
+        'ai.p': 'Освен общи ИТ съвети, ние откриваме къде AI може да поеме повтарящата се ръчна работа, да ускори решенията и да освободи екипа ви за задачи с по-висока стойност — с ясен и честен план къде AI пасва и къде не.',
+        'ai.card1.title': 'Оптимизация на процеси с AI',
+        'ai.card1.desc': 'Картографираме текущите ви работни процеси и откриваме повтарящи се стъпки, които AI може да поеме или ускори.',
+        'ai.card2.title': 'Персонализирани AI агенти',
+        'ai.card2.desc': 'Проектираме и внедряваме AI агенти за конкретни задачи — поддръжка, въвеждане на данни, отчитане, мониторинг — съобразени с вашите системи.',
+        'ai.card3.title': 'Автоматизация на работни процеси',
+        'ai.card3.desc': 'Свързваме AI агентите с вашите съществуващи инструменти и системи за пълна автоматизация, а не поредно изолирано приложение.',
+        'ai.card4.title': 'Оценка на готовността за AI',
+        'ai.card4.desc': 'Оценяваме текущите ви процеси, данни и инструменти, за да определим къде AI носи реална, измерима възвръщаемост.',
+        'ai.card5.title': 'Данни и интеграция',
+        'ai.card5.desc': 'Подготвяме и свързваме източниците на данни, за да разполагат AI агентите с надеждна и точна информация.',
+        'ai.card6.title': 'Внедряване и обучение',
+        'ai.card6.desc': 'Помагаме на екипа ви да разбере, да се довери и ефективно да използва AI инструментите ежедневно — не просто внедряваме и изчезваме.',
+        'process.kicker': 'Как работим',
+        'process.h2': 'Прост и прозрачен процес',
+        'process.p': 'Без продължително въвеждане, без обвързване — само ясен път от въпрос до решение.',
+        'process.step1.title': 'Опознавателен разговор',
+        'process.step1.desc': 'Изслушваме текущата ви ситуация, цели и ограничения — дистанционно или на място.',
+        'process.step2.title': 'Оценка',
+        'process.step2.desc': 'Разглеждаме честно възможностите ви, включително и варианта да не променяте нищо.',
+        'process.step3.title': 'Препоръка',
+        'process.step3.desc': 'Получавате ясен писмен план с плюсове и минуси — не търговско предложение.',
+        'process.step4.title': 'Подкрепа',
+        'process.step4.desc': 'Оставаме на разположение по време на изпълнението, коригирайки насоките при нужда.',
+        'why.kicker': 'Защо да изберете нас',
+        'why.h2': 'Съвети, по които наистина можете да действате',
+        'why.card1.title': 'Независими съвети',
+        'why.card1.desc': 'Консултиране, независимо от доставчици, фокусирано върху най-доброто за вашия бизнес.',
+        'why.card2.title': 'Практичен подход',
+        'why.card2.desc': 'Ясни, реалистични решения, създадени за реална бизнес среда.',
+        'why.card3.title': 'Гъвкава подкрепа',
+        'why.card3.desc': 'Консултантски услуги, налични дистанционно или на място при нужда.',
+        'faq.kicker': 'Въпроси',
+        'faq.h2': 'Често задавани въпроси',
+        'faq.q1': 'Работите ли с компании извън България?',
+        'faq.a1': 'Да. По-голямата част от консултантската работа се извършва дистанционно, така че работим с клиенти от целия ЕС и извън него. Посещения на място могат да бъдат уговорени в България.',
+        'faq.q2': 'Обвързани ли сте с конкретен доставчик на софтуер?',
+        'faq.a2': 'Не. Препоръките ни са независими и не са обвързани с доставчик — не получаваме комисионни от платформи или дистрибутори, така че съветите ни се основават на това, което пасва на вашия бизнес.',
+        'faq.q3': 'Как протича първата консултация?',
+        'faq.a3': 'Свързвате се с нас чрез формата за контакт или имейл, насрочваме кратък опознавателен разговор, а след това получавате ясно писмено резюме на възможностите и следващите стъпки.',
+        'faq.q4': 'С какъв размер бизнеси обикновено работите?',
+        'faq.a4': 'Работим с малки и средни бизнеси, които се нуждаят от практични насоки без тежестта на голяма консултантска фирма.',
+        'faq.q5': 'Помагате ли с внедряването на AI агенти, или само консултирате?',
+        'faq.a5': 'И двете. Започваме с честна оценка къде AI пасва на процесите ви, след което можем да проектираме, изградим и свържем самите AI агенти — и оставаме ангажирани по време на внедряването и обучението.',
+        'contact.kicker': 'Контакти',
+        'contact.h2': 'Нека поговорим за вашите технологии',
+        'contact.p': 'Изпратете съобщение или пишете ни директно — обикновено отговаряме до 48 часа.',
+        'contact.form.h3': 'Изпратете съобщение',
+        'contact.form.labelName': 'Име',
+        'contact.form.labelEmail': 'Имейл',
+        'contact.form.labelMessage': 'Съобщение',
+        'contact.form.placeholderName': 'Вашето име',
+        'contact.form.placeholderEmail': 'you@company.com',
+        'contact.form.placeholderMessage': 'Опишете накратко с какво имате нужда от помощ...',
+        'contact.form.submit': 'Изпрати съобщение',
+        'contact.form.note': 'Това отваря вашия имейл клиент, за да изпратите съобщението до itqdreamers@gmail.com.',
+        'contact.details.h3': 'Данни за компанията',
+        'contact.details.companyLabel': 'Компания',
+        'contact.details.locationLabel': 'Локация',
+        'contact.details.locationValue': 'България',
+        'contact.details.emailLabel': 'Имейл',
+        'contact.details.button': 'Пишете ни директно',
+        'footer.brand': 'Независимо ИТ и AI консултиране, автоматизация на процеси и дигитални технологични услуги за бизнеси в България и извън нея.',
+        'footer.companyHeading': 'Компания',
+        'footer.getInTouchHeading': 'Свържете се',
+        'footer.contactForm': 'Форма за контакт',
+        'footer.rights': 'Всички права запазени.',
+        'footer.tagline2': 'ИТ консултиране · AI консултации · Автоматизация на процеси',
+      }
+    };
+
+    const langToggle = document.getElementById('langToggle');
+    const i18nEls = document.querySelectorAll('[data-i18n]');
+    const i18nPlaceholderEls = document.querySelectorAll('[data-i18n-placeholder]');
+
+    function applyLang(lang) {
+      const dict = translations[lang] || translations.en;
+      i18nEls.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) el.textContent = dict[key];
+      });
+      i18nPlaceholderEls.forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+      });
+      document.title = dict['meta.title'];
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', dict['meta.description']);
+      document.documentElement.setAttribute('lang', lang === 'bg' ? 'bg' : 'en');
+      langToggle.textContent = lang === 'bg' ? 'EN' : 'BG';
+      localStorage.setItem('siteLang', lang);
+    }
+
+    langToggle.addEventListener('click', () => {
+      const current = localStorage.getItem('siteLang') === 'bg' ? 'bg' : 'en';
+      applyLang(current === 'bg' ? 'en' : 'bg');
+    });
+
+    applyLang(localStorage.getItem('siteLang') === 'bg' ? 'bg' : 'en');
   </script>
 
 </body>
