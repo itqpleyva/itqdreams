@@ -165,16 +165,59 @@
     overflow: hidden;
   }
 
-  .hero-section::before {
-    content: "";
+  .circuit-bg {
     position: absolute;
     inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse at 60% 0%, black 10%, transparent 70%);
+    overflow: hidden;
     pointer-events: none;
+    mask-image: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 42%, black 68%, black 100%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 42%, black 68%, black 100%);
+  }
+
+  .circuit-bg svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .circuit-bg .trace {
+    fill: none;
+    stroke: rgba(34,199,242,0.32);
+    stroke-width: 1.6;
+    stroke-dasharray: 7 9;
+    animation: dashflow 3.5s linear infinite;
+  }
+
+  .circuit-bg .trace:nth-of-type(2) { animation-duration: 4.2s; stroke: rgba(84,166,255,0.28); }
+  .circuit-bg .trace:nth-of-type(3) { animation-duration: 3.1s; }
+  .circuit-bg .trace:nth-of-type(4) { animation-duration: 4.8s; stroke: rgba(84,166,255,0.28); }
+
+  .circuit-bg .node {
+    fill: var(--cyan);
+    filter: drop-shadow(0 0 4px rgba(34,199,242,0.9));
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nodePulse 2.6s ease-in-out infinite;
+  }
+
+  .circuit-bg .signal {
+    fill: #cdf3ff;
+    filter: drop-shadow(0 0 6px rgba(180,240,255,0.95));
+  }
+
+  @keyframes dashflow {
+    to { stroke-dashoffset: -160; }
+  }
+
+  @keyframes nodePulse {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.7); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .circuit-bg .trace { animation: none; }
+    .circuit-bg .node { animation: none; opacity: 0.7; }
+    .circuit-bg .signal { display: none; }
   }
 
   .hero-inner {
@@ -695,6 +738,59 @@
   </header>
 
   <div id="top" class="hero-section">
+    <div class="circuit-bg" aria-hidden="true">
+      <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path id="trace-a" class="trace" d="M -20,120 H 260 V 40 H 620 V 200 H 1220" />
+        <path id="trace-b" class="trace" d="M 1220,540 H 860 V 640 H 480 V 480 H -20" />
+        <path id="trace-c" class="trace" d="M -20,660 H 340 V 240 H 760 V 340 H 1220" />
+        <path id="trace-d" class="trace" d="M -20,20 H 140 V 300 H 40 V 560 H 400" />
+
+        <circle class="node" cx="260" cy="120" r="3.5" style="animation-delay:0s" />
+        <circle class="node" cx="260" cy="40" r="3.5" style="animation-delay:.4s" />
+        <circle class="node" cx="620" cy="40" r="3.5" style="animation-delay:.8s" />
+        <circle class="node" cx="620" cy="200" r="3.5" style="animation-delay:1.2s" />
+
+        <circle class="node" cx="860" cy="540" r="3.5" style="animation-delay:.2s" />
+        <circle class="node" cx="860" cy="640" r="3.5" style="animation-delay:.6s" />
+        <circle class="node" cx="480" cy="640" r="3.5" style="animation-delay:1s" />
+        <circle class="node" cx="480" cy="480" r="3.5" style="animation-delay:1.4s" />
+
+        <circle class="node" cx="340" cy="660" r="3.5" style="animation-delay:.3s" />
+        <circle class="node" cx="340" cy="240" r="3.5" style="animation-delay:.7s" />
+        <circle class="node" cx="760" cy="240" r="3.5" style="animation-delay:1.1s" />
+        <circle class="node" cx="760" cy="340" r="3.5" style="animation-delay:1.5s" />
+
+        <circle class="node" cx="140" cy="20" r="3.5" style="animation-delay:.1s" />
+        <circle class="node" cx="140" cy="300" r="3.5" style="animation-delay:.5s" />
+        <circle class="node" cx="40" cy="300" r="3.5" style="animation-delay:.9s" />
+        <circle class="node" cx="40" cy="560" r="3.5" style="animation-delay:1.3s" />
+
+        <circle class="signal" r="4.5">
+          <animateMotion dur="7s" repeatCount="indefinite" begin="0s">
+            <mpath xlink:href="#trace-a" href="#trace-a" />
+          </animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.08;.92;1" dur="7s" repeatCount="indefinite" begin="0s" />
+        </circle>
+        <circle class="signal" r="4.5">
+          <animateMotion dur="9s" repeatCount="indefinite" begin="1.8s">
+            <mpath xlink:href="#trace-b" href="#trace-b" />
+          </animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.08;.92;1" dur="9s" repeatCount="indefinite" begin="1.8s" />
+        </circle>
+        <circle class="signal" r="4.5">
+          <animateMotion dur="8s" repeatCount="indefinite" begin="3.4s">
+            <mpath xlink:href="#trace-c" href="#trace-c" />
+          </animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.08;.92;1" dur="8s" repeatCount="indefinite" begin="3.4s" />
+        </circle>
+        <circle class="signal" r="4.5">
+          <animateMotion dur="10s" repeatCount="indefinite" begin="5s">
+            <mpath xlink:href="#trace-d" href="#trace-d" />
+          </animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.08;.92;1" dur="10s" repeatCount="indefinite" begin="5s" />
+        </circle>
+      </svg>
+    </div>
     <div class="wrap hero-inner">
       <div class="hero">
         <div class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Independent IT & AI Consulting · Bulgaria</span></div>
