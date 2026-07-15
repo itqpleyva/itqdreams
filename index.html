@@ -157,7 +157,8 @@
 
   .hero-inner {
     position: relative;
-    padding: 96px 0 110px;
+    padding-top: 96px;
+    padding-bottom: 110px;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 40px;
@@ -629,7 +630,7 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; padding: 56px 0 70px; }
+    .hero-inner { grid-template-columns: 1fr; padding-top: 56px; padding-bottom: 70px; }
     .hero-visual { order: -1; }
     .about-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
@@ -693,7 +694,7 @@
 
   <div id="top" class="hero-section">
     <div class="wrap hero-inner">
-      <div>
+      <div class="hero">
         <div class="eyebrow"><span class="dot"></span> Independent IT & AI Consulting · Bulgaria</div>
         <h1>Technology and AI Advice That Actually <span>Moves Your Business Forward</span></h1>
         <p>
